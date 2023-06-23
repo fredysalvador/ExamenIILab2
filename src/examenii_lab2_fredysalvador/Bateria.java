@@ -42,6 +42,4 @@ public class Bateria extends Parte{
         this.tiempo_Ensamblaje = tiempo_Ensamblaje;
     }
 
-    
-    
 }
