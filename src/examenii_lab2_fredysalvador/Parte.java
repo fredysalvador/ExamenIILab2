@@ -15,4 +15,5 @@ public class Parte {
         this.tiempo_Ensamblaje = tiempo_Ensamblaje;
     }
     
+    
 }
