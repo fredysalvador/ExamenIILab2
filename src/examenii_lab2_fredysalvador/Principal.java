@@ -66,6 +66,14 @@ public class Principal extends javax.swing.JFrame {
         InsertaFilaTabla2 = new javax.swing.JButton();
         eliminarfilaTabla2 = new javax.swing.JButton();
         frmpartes = new javax.swing.JDialog();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        jCheckBox3 = new javax.swing.JCheckBox();
+        jCheckBox4 = new javax.swing.JCheckBox();
+        jCheckBox5 = new javax.swing.JCheckBox();
+        jCheckBox6 = new javax.swing.JCheckBox();
         btAgregarComputadoras = new javax.swing.JButton();
         btAgregarTecnicos = new javax.swing.JButton();
         btAgregarPartes = new javax.swing.JButton();
@@ -218,15 +226,83 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(14, 14, 14))
         );
 
+        frmpartes.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                frmpartesWindowOpened(evt);
+            }
+        });
+
+        jCheckBox1.setText("Ram");
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Num_serie", "Año", "Color", "Material", "Ram", "Disco Duro", "Bateria", "Teclado", "Pantalla", "Procesador"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(jTable3);
+
+        jCheckBox2.setText("Disco Duro");
+
+        jCheckBox3.setText("Bateria");
+
+        jCheckBox4.setText("Teclado");
+
+        jCheckBox5.setText("Pantalla");
+
+        jCheckBox6.setText("Procesador");
+
         javax.swing.GroupLayout frmpartesLayout = new javax.swing.GroupLayout(frmpartes.getContentPane());
         frmpartes.getContentPane().setLayout(frmpartesLayout);
         frmpartesLayout.setHorizontalGroup(
             frmpartesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(frmpartesLayout.createSequentialGroup()
+                .addGap(137, 137, 137)
+                .addComponent(jCheckBox1)
+                .addGap(35, 35, 35)
+                .addComponent(jCheckBox2)
+                .addGap(31, 31, 31)
+                .addComponent(jCheckBox3)
+                .addGap(32, 32, 32)
+                .addComponent(jCheckBox4)
+                .addGap(29, 29, 29)
+                .addComponent(jCheckBox5)
+                .addGap(18, 18, 18)
+                .addComponent(jCheckBox6)
+                .addContainerGap(170, Short.MAX_VALUE))
+            .addGroup(frmpartesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(frmpartesLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 838, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         frmpartesLayout.setVerticalGroup(
             frmpartesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, frmpartesLayout.createSequentialGroup()
+                .addContainerGap(228, Short.MAX_VALUE)
+                .addGroup(frmpartesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCheckBox2)
+                    .addComponent(jCheckBox1)
+                    .addComponent(jCheckBox3)
+                    .addComponent(jCheckBox4)
+                    .addComponent(jCheckBox5)
+                    .addComponent(jCheckBox6))
+                .addGap(29, 29, 29))
+            .addGroup(frmpartesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(frmpartesLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(132, Short.MAX_VALUE)))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -595,6 +671,40 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_frmtecnicoWindowOpened
 
+    private void frmpartesWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_frmpartesWindowOpened
+        // TODO add your handling code here:
+          try {
+            String filePath = "Computadora_Agregar.txt";
+
+            // Leer el archivo de texto
+            File file = new File(filePath);
+            if (file.exists()) {
+                BufferedReader reader = new BufferedReader(new FileReader(file));
+                String line;
+                DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
+
+                // Leer cada línea del archivo y agregar los datos a la tabla
+                boolean skipFirstLine = true;  // Variable para omitir la primera línea
+                while ((line = reader.readLine()) != null) {
+                    if (skipFirstLine) {
+                        skipFirstLine = false;
+                        continue;  // Omitir la primera línea
+                    }
+                    String[] data = line.split(",");
+                    model.addRow(data);
+                }
+
+                reader.close();
+
+                // No mostrar ningún mensaje
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            // Mostrar mensaje de error
+            JOptionPane.showMessageDialog(this, "Error al importar los datos", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_frmpartesWindowOpened
+
     /**
      * @param args the command line arguments
      */
@@ -643,9 +753,17 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JDialog frmcomputadora;
     private javax.swing.JDialog frmpartes;
     private javax.swing.JDialog frmtecnico;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox3;
+    private javax.swing.JCheckBox jCheckBox4;
+    private javax.swing.JCheckBox jCheckBox5;
+    private javax.swing.JCheckBox jCheckBox6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
     // End of variables declaration//GEN-END:variables
 }
