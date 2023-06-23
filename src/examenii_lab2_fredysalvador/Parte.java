@@ -9,5 +9,10 @@ package examenii_lab2_fredysalvador;
  * @author Fredy Salvador
  */
 public class Parte {
+    double tiempo_Ensamblaje;
+
+    public Parte(double tiempo_Ensamblaje) {
+        this.tiempo_Ensamblaje = tiempo_Ensamblaje;
+    }
     
 }
