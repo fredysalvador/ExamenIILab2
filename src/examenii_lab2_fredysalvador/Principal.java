@@ -4,6 +4,9 @@
  */
 package examenii_lab2_fredysalvador;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.JFileChooser;
@@ -36,26 +39,29 @@ public class Principal extends javax.swing.JFrame {
         frmcomputadora = new javax.swing.JDialog();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton4 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        InsertarTabla1 = new javax.swing.JButton();
+        InsertarFilaTabla1 = new javax.swing.JButton();
+        eliminarfilaTabla1 = new javax.swing.JButton();
         frmtecnico = new javax.swing.JDialog();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        InsertarTabla2 = new javax.swing.JButton();
+        InsertaFilaTabla2 = new javax.swing.JButton();
+        eliminarfilaTabla2 = new javax.swing.JButton();
         frmpartes = new javax.swing.JDialog();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btAgregarComputadoras = new javax.swing.JButton();
+        btAgregarTecnicos = new javax.swing.JButton();
+        btAgregarPartes = new javax.swing.JButton();
+
+        frmcomputadora.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                frmcomputadoraWindowOpened(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "Num_serie", "Año", "Color", "Material", "Ram", "Disco Duro", "Bateria", "Teclado", "Pantalla", "Procesador"
@@ -71,24 +77,24 @@ public class Principal extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jButton4.setText("Guardar Info");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        InsertarTabla1.setText("Guardar Info");
+        InsertarTabla1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                InsertarTabla1ActionPerformed(evt);
             }
         });
 
-        jButton8.setText("Insertar Fila");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        InsertarFilaTabla1.setText("Insertar Fila");
+        InsertarFilaTabla1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                InsertarFilaTabla1ActionPerformed(evt);
             }
         });
 
-        jButton9.setText("Eliminar Fila");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        eliminarfilaTabla1.setText("Eliminar Fila");
+        eliminarfilaTabla1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                eliminarfilaTabla1ActionPerformed(evt);
             }
         });
 
@@ -101,11 +107,11 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(frmcomputadoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 978, Short.MAX_VALUE)
                     .addGroup(frmcomputadoraLayout.createSequentialGroup()
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(InsertarTabla1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(InsertarFilaTabla1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(eliminarfilaTabla1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -116,9 +122,9 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(frmcomputadoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(InsertarFilaTabla1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(eliminarfilaTabla1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(InsertarTabla1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -140,24 +146,24 @@ public class Principal extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jTable2);
 
-        jButton5.setText("Guardar Info");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        InsertarTabla2.setText("Guardar Info");
+        InsertarTabla2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                InsertarTabla2ActionPerformed(evt);
             }
         });
 
-        jButton6.setText("Insertar Fila");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        InsertaFilaTabla2.setText("Insertar Fila");
+        InsertaFilaTabla2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                InsertaFilaTabla2ActionPerformed(evt);
             }
         });
 
-        jButton7.setText("Eliminar Fila");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        eliminarfilaTabla2.setText("Eliminar Fila");
+        eliminarfilaTabla2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                eliminarfilaTabla2ActionPerformed(evt);
             }
         });
 
@@ -170,11 +176,11 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(frmtecnicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 984, Short.MAX_VALUE)
                     .addGroup(frmtecnicoLayout.createSequentialGroup()
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(InsertarTabla2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(InsertaFilaTabla2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(eliminarfilaTabla2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -185,9 +191,9 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(frmtecnicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(InsertarTabla2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(InsertaFilaTabla2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(eliminarfilaTabla2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(14, 14, 14))
         );
 
@@ -204,29 +210,34 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jButton1.setText("Agregar Computadora");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btAgregarComputadoras.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        btAgregarComputadoras.setText("Agregar Computadora");
+        btAgregarComputadoras.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                btAgregarComputadorasMouseClicked(evt);
             }
         });
-
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jButton2.setText("Agregar Tecnico");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
-            }
-        });
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btAgregarComputadoras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btAgregarComputadorasActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jButton3.setText("Agregar Parte");
+        btAgregarTecnicos.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        btAgregarTecnicos.setText("Agregar Tecnico");
+        btAgregarTecnicos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btAgregarTecnicosMouseClicked(evt);
+            }
+        });
+        btAgregarTecnicos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAgregarTecnicosActionPerformed(evt);
+            }
+        });
+
+        btAgregarPartes.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        btAgregarPartes.setText("Agregar Parte");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -236,12 +247,12 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(80, 80, 80)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btAgregarComputadoras, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(57, 57, 57)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btAgregarTecnicos, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(370, 370, 370)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btAgregarPartes, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(113, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -249,17 +260,17 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(70, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btAgregarComputadoras, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btAgregarTecnicos, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(64, 64, 64)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btAgregarPartes, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(74, 74, 74))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void InsertarTabla1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertarTabla1ActionPerformed
 DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
 
 // Crear un StringBuilder para construir el contenido del archivo
@@ -288,7 +299,7 @@ for (int i = 0; i < rowCount; i++) {
 }
 
 // Especificar la ubicación y el nombre de archivo fijo
-String filePath = "tabla.txt";
+String filePath = "Computadora_Agregar.txt";
 
 // Escribir los datos en el archivo
 try (FileWriter fileWriter = new FileWriter(filePath)) {
@@ -301,105 +312,145 @@ try (FileWriter fileWriter = new FileWriter(filePath)) {
     // Mostrar mensaje de error
     JOptionPane.showMessageDialog(this, "Error al exportar los datos", "Error", JOptionPane.ERROR_MESSAGE);
 }
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_InsertarTabla1ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-           // TODO add your handling code here:
-         DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+    private void InsertarTabla2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertarTabla2ActionPerformed
+DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
 
-        // Crear un StringBuilder para construir el contenido del archivo
-        StringBuilder txtData = new StringBuilder();
+// Crear un StringBuilder para construir el contenido del archivo
+StringBuilder txtData = new StringBuilder();
 
-        // Obtener los nombres de las columnas
-        int columnCount = model.getColumnCount();
-        for (int i = 0; i < columnCount; i++) {
-            txtData.append(model.getColumnName(i));
-            if (i < columnCount - 1) {
-                txtData.append(",");
-            }
+// Obtener los nombres de las columnas
+int columnCount = model.getColumnCount();
+for (int i = 0; i < columnCount; i++) {
+    txtData.append(model.getColumnName(i));
+    if (i < columnCount - 1) {
+        txtData.append(",");
+    }
+}
+txtData.append("\n");
+
+// Obtener los datos de la tabla
+int rowCount = model.getRowCount();
+for (int i = 0; i < rowCount; i++) {
+    for (int j = 0; j < columnCount; j++) {
+        txtData.append(model.getValueAt(i, j));
+        if (j < columnCount - 1) {
+            txtData.append(",");
         }
-        txtData.append("\n");
+    }
+    txtData.append("\n");
+}
 
-        // Obtener los datos de la tabla
-        int rowCount = model.getRowCount();
-        for (int i = 0; i < rowCount; i++) {
-            for (int j = 0; j < columnCount; j++) {
-                txtData.append(model.getValueAt(i, j));
-                if (j < columnCount - 1) {
-                    txtData.append(",");
-                }
-            }
-            txtData.append("\n");
-        }
+// Especificar la ubicación y el nombre de archivo fijo
+String filePath = "Tecnico.txt";
 
-        // Crear un diálogo de archivo para guardar el archivo
-        JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle("Guardar archivo");
-        fileChooser.setFileFilter(new FileNameExtensionFilter("Archivos de texto (*.txt)", "txt"));
+// Escribir los datos en el archivo
+try (FileWriter fileWriter = new FileWriter(filePath)) {
+    fileWriter.write(txtData.toString());
 
-        int userSelection = fileChooser.showSaveDialog(this);
+    // Mostrar mensaje de éxito
+    JOptionPane.showMessageDialog(this, "Exportación exitosa");
+} catch (IOException ex) {
+    ex.printStackTrace();
+    // Mostrar mensaje de error
+    JOptionPane.showMessageDialog(this, "Error al exportar los datos", "Error", JOptionPane.ERROR_MESSAGE);
+}    
+    }//GEN-LAST:event_InsertarTabla2ActionPerformed
 
-        if (userSelection == JFileChooser.APPROVE_OPTION) {
-            String filePath = fileChooser.getSelectedFile().getAbsolutePath();
-
-            // Agregar la extensión .txt si no está presente
-            if (!filePath.toLowerCase().endsWith(".txt")) {
-                filePath += ".txt";
-            }
-
-            // Escribir los datos en el archivo
-            try (FileWriter fileWriter = new FileWriter(filePath)) {
-                fileWriter.write(txtData.toString());
-
-                // Mostrar mensaje de éxito
-                JOptionPane.showMessageDialog(this, "Exportación exitosa");
-            } catch (IOException ex) {
-                ex.printStackTrace();
-                // Mostrar mensaje de error
-                JOptionPane.showMessageDialog(this, "Error al exportar los datos", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        }
-        
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void InsertaFilaTabla2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertaFilaTabla2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_InsertaFilaTabla2ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void eliminarfilaTabla2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarfilaTabla2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+int selectedRow = jTable2.getSelectedRow();
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+if (selectedRow != -1) {
+    // Eliminar la fila seleccionada
+    model.removeRow(selectedRow);
+} else {
+    // Mostrar mensaje de error si no se ha seleccionado ninguna fila
+    JOptionPane.showMessageDialog(this, "Selecciona una fila para eliminar", "Error", JOptionPane.ERROR_MESSAGE);
+}
+    }//GEN-LAST:event_eliminarfilaTabla2ActionPerformed
+
+    private void InsertarFilaTabla1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertarFilaTabla1ActionPerformed
         // TODO add your handling code here:
          DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.addRow(new Object[model.getColumnCount()]);
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_InsertarFilaTabla1ActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void eliminarfilaTabla1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarfilaTabla1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+int selectedRow = jTable1.getSelectedRow();
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+if (selectedRow != -1) {
+    // Eliminar la fila seleccionada
+    model.removeRow(selectedRow);
+} else {
+    // Mostrar mensaje de error si no se ha seleccionado ninguna fila
+    JOptionPane.showMessageDialog(this, "Selecciona una fila para eliminar", "Error", JOptionPane.ERROR_MESSAGE);
+}
+    }//GEN-LAST:event_eliminarfilaTabla1ActionPerformed
+
+    private void btAgregarComputadorasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btAgregarComputadorasMouseClicked
         // TODO add your handling code here:
         frmcomputadora.pack();
         frmcomputadora.setLocationRelativeTo(this);
         frmcomputadora.setModal(true);
         frmcomputadora.setVisible(true);
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_btAgregarComputadorasMouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btAgregarTecnicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAgregarTecnicosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btAgregarTecnicosActionPerformed
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void btAgregarTecnicosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btAgregarTecnicosMouseClicked
         // TODO add your handling code here:
         frmtecnico.pack();
         frmtecnico.setLocationRelativeTo(this);
         frmtecnico.setModal(true);
         frmtecnico.setVisible(true);
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_btAgregarTecnicosMouseClicked
+
+    private void btAgregarComputadorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAgregarComputadorasActionPerformed
+
+    }//GEN-LAST:event_btAgregarComputadorasActionPerformed
+
+    private void frmcomputadoraWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_frmcomputadoraWindowOpened
+        // TODO add your handling code here:
+try {
+    String filePath = "Computadora_Agregar.txt";
+
+    // Leer el archivo de texto
+    BufferedReader reader = new BufferedReader(new FileReader(filePath));
+    String line;
+    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+    // Leer cada línea del archivo y agregar los datos a la tabla
+    boolean skipFirstLine = true;  // Variable para omitir la primera línea
+    while ((line = reader.readLine()) != null) {
+        if (skipFirstLine) {
+            skipFirstLine = false;
+            continue;  // Omitir la primera línea
+        }
+        String[] data = line.split(",");
+        model.addRow(data);
+    }
+
+    reader.close();
+
+    // Mostrar mensaje de éxito
+    JOptionPane.showMessageDialog(this, "Importación exitosa");
+} catch (IOException ex) {
+    ex.printStackTrace();
+    // Mostrar mensaje de error
+    JOptionPane.showMessageDialog(this, "Error al importar los datos", "Error", JOptionPane.ERROR_MESSAGE);
+}
+    }//GEN-LAST:event_frmcomputadoraWindowOpened
 
     /**
      * @param args the command line arguments
@@ -437,18 +488,18 @@ try (FileWriter fileWriter = new FileWriter(filePath)) {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton InsertaFilaTabla2;
+    private javax.swing.JButton InsertarFilaTabla1;
+    private javax.swing.JButton InsertarTabla1;
+    private javax.swing.JButton InsertarTabla2;
+    private javax.swing.JButton btAgregarComputadoras;
+    private javax.swing.JButton btAgregarPartes;
+    private javax.swing.JButton btAgregarTecnicos;
+    private javax.swing.JButton eliminarfilaTabla1;
+    private javax.swing.JButton eliminarfilaTabla2;
     private javax.swing.JDialog frmcomputadora;
     private javax.swing.JDialog frmpartes;
     private javax.swing.JDialog frmtecnico;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;

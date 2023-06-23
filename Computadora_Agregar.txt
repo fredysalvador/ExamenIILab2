@@ -1,0 +1,5 @@
+Num_serie,Año,Color,Material,Ram,Disco Duro,Bateria,Teclado,Pantalla,Procesador
+123213,2003,Verde,Carton,34,3,2,4,1,2
+4234234,4005,Rojo,Llenar,34,2,2,4,1,null
+231,234234,asd,asd,43,4,5,6,2,3
+123,234,asd,ads,5,1,2,1,1,null
