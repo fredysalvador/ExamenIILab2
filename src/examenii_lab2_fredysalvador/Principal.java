@@ -74,6 +74,9 @@ public class Principal extends javax.swing.JFrame {
         jCheckBox4 = new javax.swing.JCheckBox();
         jCheckBox5 = new javax.swing.JCheckBox();
         jCheckBox6 = new javax.swing.JCheckBox();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
+        btSimulacion = new javax.swing.JButton();
         btAgregarComputadoras = new javax.swing.JButton();
         btAgregarTecnicos = new javax.swing.JButton();
         btAgregarPartes = new javax.swing.JButton();
@@ -262,24 +265,57 @@ public class Principal extends javax.swing.JFrame {
 
         jCheckBox6.setText("Procesador");
 
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Edad", "Genero", "cant_comp"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane4.setViewportView(jTable4);
+
+        btSimulacion.setText("Simular Reparacion");
+        btSimulacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSimulacionActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout frmpartesLayout = new javax.swing.GroupLayout(frmpartes.getContentPane());
         frmpartes.getContentPane().setLayout(frmpartesLayout);
         frmpartesLayout.setHorizontalGroup(
             frmpartesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(frmpartesLayout.createSequentialGroup()
-                .addGap(137, 137, 137)
-                .addComponent(jCheckBox1)
-                .addGap(35, 35, 35)
-                .addComponent(jCheckBox2)
-                .addGap(31, 31, 31)
-                .addComponent(jCheckBox3)
-                .addGap(32, 32, 32)
-                .addComponent(jCheckBox4)
-                .addGap(29, 29, 29)
-                .addComponent(jCheckBox5)
-                .addGap(18, 18, 18)
-                .addComponent(jCheckBox6)
-                .addContainerGap(170, Short.MAX_VALUE))
+                .addGroup(frmpartesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, frmpartesLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 838, Short.MAX_VALUE))
+                    .addGroup(frmpartesLayout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addGroup(frmpartesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btSimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jCheckBox1))
+                        .addGap(35, 35, 35)
+                        .addComponent(jCheckBox2)
+                        .addGap(31, 31, 31)
+                        .addComponent(jCheckBox3)
+                        .addGap(32, 32, 32)
+                        .addComponent(jCheckBox4)
+                        .addGap(29, 29, 29)
+                        .addComponent(jCheckBox5)
+                        .addGap(18, 18, 18)
+                        .addComponent(jCheckBox6)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
             .addGroup(frmpartesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(frmpartesLayout.createSequentialGroup()
                     .addContainerGap()
@@ -289,7 +325,9 @@ public class Principal extends javax.swing.JFrame {
         frmpartesLayout.setVerticalGroup(
             frmpartesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, frmpartesLayout.createSequentialGroup()
-                .addContainerGap(228, Short.MAX_VALUE)
+                .addGap(154, 154, 154)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
                 .addGroup(frmpartesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCheckBox2)
                     .addComponent(jCheckBox1)
@@ -297,12 +335,14 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jCheckBox4)
                     .addComponent(jCheckBox5)
                     .addComponent(jCheckBox6))
-                .addGap(29, 29, 29))
+                .addGap(18, 18, 18)
+                .addComponent(btSimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
             .addGroup(frmpartesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(frmpartesLayout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(132, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(293, Short.MAX_VALUE)))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -335,6 +375,11 @@ public class Principal extends javax.swing.JFrame {
 
         btAgregarPartes.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         btAgregarPartes.setText("Agregar Parte");
+        btAgregarPartes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btAgregarPartesMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -640,7 +685,7 @@ public class Principal extends javax.swing.JFrame {
     private void frmtecnicoWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_frmtecnicoWindowOpened
         // TODO add your handling code here:
            try {
-            String filePath = "Computadora_Agregar.txt";
+            String filePath = "Tecnico.txt";
 
             // Leer el archivo de texto
             File file = new File(filePath);
@@ -703,7 +748,84 @@ public class Principal extends javax.swing.JFrame {
             // Mostrar mensaje de error
             JOptionPane.showMessageDialog(this, "Error al importar los datos", "Error", JOptionPane.ERROR_MESSAGE);
         }
+          
+          
+          
+               // TODO add your handling code here:
+           try {
+            String filePath = "Tecnico.txt";
+
+            // Leer el archivo de texto
+            File file = new File(filePath);
+            if (file.exists()) {
+                BufferedReader reader = new BufferedReader(new FileReader(file));
+                String line;
+                DefaultTableModel model = (DefaultTableModel) jTable4.getModel();
+
+                // Leer cada línea del archivo y agregar los datos a la tabla
+                boolean skipFirstLine = true;  // Variable para omitir la primera línea
+                while ((line = reader.readLine()) != null) {
+                    if (skipFirstLine) {
+                        skipFirstLine = false;
+                        continue;  // Omitir la primera línea
+                    }
+                    String[] data = line.split(",");
+                    model.addRow(data);
+                }
+
+                reader.close();
+
+                // No mostrar ningún mensaje
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            // Mostrar mensaje de error
+            JOptionPane.showMessageDialog(this, "Error al importar los datos", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+          
+          
     }//GEN-LAST:event_frmpartesWindowOpened
+
+    private void btAgregarPartesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btAgregarPartesMouseClicked
+        // TODO add your handling code here:
+        frmpartes.pack();
+        frmpartes.setLocationRelativeTo(this);
+        frmpartes.setModal(true);
+        frmpartes.setVisible(true);
+    }//GEN-LAST:event_btAgregarPartesMouseClicked
+
+    private void btSimulacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSimulacionActionPerformed
+ // Obtener el valor de la columna 4 (índice 3) de la fila seleccionada
+ 
+  int selectedRow = jTable4.getSelectedRow();
+
+    // Verificar si se ha seleccionado una fila
+    if (selectedRow != -1) {
+Object value = jTable4.getValueAt(selectedRow, 3);
+
+// Verificar si el valor es de tipo numérico
+if (value instanceof Number) {
+    // Convertir el valor a un tipo numérico específico (por ejemplo, int)
+    int column4Value = ((Number) value).intValue();
+
+    // Calcular el porcentaje de fallas basado en el valor obtenido
+    double porcentajeFallas;
+    if (column4Value >= 1 && column4Value <= 5) {
+        porcentajeFallas = 0.3;  // 30% de fallar
+    } else if (column4Value >= 6 && column4Value <= 15) {
+        porcentajeFallas = 0.22;  // 22% de fallar
+    } else if (column4Value >= 16 && column4Value <= 30) {
+        porcentajeFallas = 0.13;  // 13% de fallar
+    } else {
+        porcentajeFallas = 0.07;  // 7% de fallar
+    }
+
+    // Utilizar el porcentaje de fallas como necesites
+    // ...
+
+    JOptionPane.showMessageDialog(this, "Porcentaje de fallas: " + (porcentajeFallas * 100) + "%");
+}}
+    }//GEN-LAST:event_btSimulacionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -748,6 +870,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btAgregarComputadoras;
     private javax.swing.JButton btAgregarPartes;
     private javax.swing.JButton btAgregarTecnicos;
+    private javax.swing.JButton btSimulacion;
     private javax.swing.JButton eliminarfilaTabla1;
     private javax.swing.JButton eliminarfilaTabla2;
     private javax.swing.JDialog frmcomputadora;
@@ -762,8 +885,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
     // End of variables declaration//GEN-END:variables
 }

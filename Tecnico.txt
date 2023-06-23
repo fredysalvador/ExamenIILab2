@@ -1,1 +1,2 @@
 Nombre,Edad,Genero,cant_comp
+Fredy SAlvador,23,asd,null

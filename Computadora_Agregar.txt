@@ -1,2 +1,3 @@
 Num_serie,Año,Color,Material,Ram,Disco Duro,Bateria,Teclado,Pantalla,Procesador
-222211,2003,Rojo,Plastico,2,3,1,1,2,6
+222211,2003,Rojo,Plastico,2,3,1,1,1,6
+4343434,2005,Verde,Hierro,5,2,1,1,1,null
