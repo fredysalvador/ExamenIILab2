@@ -4,6 +4,8 @@
  */
 package examenii_lab2_fredysalvador;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -25,6 +27,21 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        centerForm();
+    }
+
+    private void centerForm() {
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int screenWidth = screenSize.width;
+        int screenHeight = screenSize.height;
+
+        int formWidth = this.getWidth();
+        int formHeight = this.getHeight();
+
+        int x = (screenWidth - formWidth) / 2;
+        int y = (screenHeight - formHeight) / 2;
+
+        this.setLocation(x, y);
     }
 
     /**
@@ -40,8 +57,8 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         InsertarTabla1 = new javax.swing.JButton();
-        InsertarFilaTabla1 = new javax.swing.JButton();
         eliminarfilaTabla1 = new javax.swing.JButton();
+        InsertarFilaTabla1 = new javax.swing.JButton();
         frmtecnico = new javax.swing.JDialog();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
@@ -77,17 +94,10 @@ public class Principal extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        InsertarTabla1.setText("Guardar Info");
+        InsertarTabla1.setText("Agregar Informacion");
         InsertarTabla1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 InsertarTabla1ActionPerformed(evt);
-            }
-        });
-
-        InsertarFilaTabla1.setText("Insertar Fila");
-        InsertarFilaTabla1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                InsertarFilaTabla1ActionPerformed(evt);
             }
         });
 
@@ -98,6 +108,13 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        InsertarFilaTabla1.setText("Insertar Fila");
+        InsertarFilaTabla1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InsertarFilaTabla1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout frmcomputadoraLayout = new javax.swing.GroupLayout(frmcomputadora.getContentPane());
         frmcomputadora.getContentPane().setLayout(frmcomputadoraLayout);
         frmcomputadoraLayout.setHorizontalGroup(
@@ -105,14 +122,13 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(frmcomputadoraLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(frmcomputadoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 978, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1)
                     .addGroup(frmcomputadoraLayout.createSequentialGroup()
-                        .addComponent(InsertarTabla1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(InsertarFilaTabla1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(InsertarTabla1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(eliminarfilaTabla1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 522, Short.MAX_VALUE)
+                        .addComponent(InsertarFilaTabla1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         frmcomputadoraLayout.setVerticalGroup(
@@ -127,6 +143,12 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(InsertarTabla1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
+
+        frmtecnico.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                frmtecnicoWindowOpened(evt);
+            }
+        });
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -146,7 +168,7 @@ public class Principal extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jTable2);
 
-        InsertarTabla2.setText("Guardar Info");
+        InsertarTabla2.setText("Agregar Informacion");
         InsertarTabla2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 InsertarTabla2ActionPerformed(evt);
@@ -176,12 +198,11 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(frmtecnicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 984, Short.MAX_VALUE)
                     .addGroup(frmtecnicoLayout.createSequentialGroup()
-                        .addComponent(InsertarTabla2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(InsertaFilaTabla2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(InsertarTabla2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(eliminarfilaTabla2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(eliminarfilaTabla2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(InsertaFilaTabla2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         frmtecnicoLayout.setVerticalGroup(
@@ -189,7 +210,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(frmtecnicoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(frmtecnicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(InsertarTabla2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(InsertaFilaTabla2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -271,129 +292,216 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void InsertarTabla1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertarTabla1ActionPerformed
-DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
 
 // Crear un StringBuilder para construir el contenido del archivo
-StringBuilder txtData = new StringBuilder();
+        StringBuilder txtData = new StringBuilder();
 
 // Obtener los nombres de las columnas
-int columnCount = model.getColumnCount();
-for (int i = 0; i < columnCount; i++) {
-    txtData.append(model.getColumnName(i));
-    if (i < columnCount - 1) {
-        txtData.append(",");
-    }
-}
-txtData.append("\n");
+        int columnCount = model.getColumnCount();
+        for (int i = 0; i < columnCount; i++) {
+            txtData.append(model.getColumnName(i));
+            if (i < columnCount - 1) {
+                txtData.append(",");
+            }
+        }
+        txtData.append("\n");
 
 // Obtener los datos de la tabla
-int rowCount = model.getRowCount();
-for (int i = 0; i < rowCount; i++) {
-    for (int j = 0; j < columnCount; j++) {
-        txtData.append(model.getValueAt(i, j));
-        if (j < columnCount - 1) {
-            txtData.append(",");
+        int rowCount = model.getRowCount();
+        for (int i = 0; i < rowCount; i++) {
+            for (int j = 0; j < columnCount; j++) {
+                txtData.append(model.getValueAt(i, j));
+                if (j < columnCount - 1) {
+                    txtData.append(",");
+                }
+            }
+            txtData.append("\n");
         }
-    }
-    txtData.append("\n");
-}
 
 // Especificar la ubicación y el nombre de archivo fijo
-String filePath = "Computadora_Agregar.txt";
+        String filePath = "Computadora_Agregar.txt";
 
 // Escribir los datos en el archivo
-try (FileWriter fileWriter = new FileWriter(filePath)) {
-    fileWriter.write(txtData.toString());
+        try ( FileWriter fileWriter = new FileWriter(filePath)) {
+            fileWriter.write(txtData.toString());
 
-    // Mostrar mensaje de éxito
-    JOptionPane.showMessageDialog(this, "Exportación exitosa");
-} catch (IOException ex) {
-    ex.printStackTrace();
-    // Mostrar mensaje de error
-    JOptionPane.showMessageDialog(this, "Error al exportar los datos", "Error", JOptionPane.ERROR_MESSAGE);
-}
+            // Mostrar mensaje de éxito
+            JOptionPane.showMessageDialog(this, "Exportación exitosa");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            // Mostrar mensaje de error
+            JOptionPane.showMessageDialog(this, "Error al exportar los datos", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_InsertarTabla1ActionPerformed
 
     private void InsertarTabla2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertarTabla2ActionPerformed
-DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
 
 // Crear un StringBuilder para construir el contenido del archivo
-StringBuilder txtData = new StringBuilder();
+        StringBuilder txtData = new StringBuilder();
 
 // Obtener los nombres de las columnas
-int columnCount = model.getColumnCount();
-for (int i = 0; i < columnCount; i++) {
-    txtData.append(model.getColumnName(i));
-    if (i < columnCount - 1) {
-        txtData.append(",");
-    }
-}
-txtData.append("\n");
+        int columnCount = model.getColumnCount();
+        for (int i = 0; i < columnCount; i++) {
+            txtData.append(model.getColumnName(i));
+            if (i < columnCount - 1) {
+                txtData.append(",");
+            }
+        }
+        txtData.append("\n");
 
 // Obtener los datos de la tabla
-int rowCount = model.getRowCount();
-for (int i = 0; i < rowCount; i++) {
-    for (int j = 0; j < columnCount; j++) {
-        txtData.append(model.getValueAt(i, j));
-        if (j < columnCount - 1) {
-            txtData.append(",");
+        int rowCount = model.getRowCount();
+        for (int i = 0; i < rowCount; i++) {
+            for (int j = 0; j < columnCount; j++) {
+                txtData.append(model.getValueAt(i, j));
+                if (j < columnCount - 1) {
+                    txtData.append(",");
+                }
+            }
+            txtData.append("\n");
         }
-    }
-    txtData.append("\n");
-}
 
 // Especificar la ubicación y el nombre de archivo fijo
-String filePath = "Tecnico.txt";
+        String filePath = "Tecnico.txt";
 
 // Escribir los datos en el archivo
-try (FileWriter fileWriter = new FileWriter(filePath)) {
-    fileWriter.write(txtData.toString());
+        try ( FileWriter fileWriter = new FileWriter(filePath)) {
+            fileWriter.write(txtData.toString());
 
-    // Mostrar mensaje de éxito
-    JOptionPane.showMessageDialog(this, "Exportación exitosa");
-} catch (IOException ex) {
-    ex.printStackTrace();
-    // Mostrar mensaje de error
-    JOptionPane.showMessageDialog(this, "Error al exportar los datos", "Error", JOptionPane.ERROR_MESSAGE);
-}    
+            // Mostrar mensaje de éxito
+            JOptionPane.showMessageDialog(this, "Exportación exitosa");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            // Mostrar mensaje de error
+            JOptionPane.showMessageDialog(this, "Error al exportar los datos", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_InsertarTabla2ActionPerformed
 
     private void InsertaFilaTabla2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertaFilaTabla2ActionPerformed
         // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+        model.addRow(new Object[model.getColumnCount()]);
     }//GEN-LAST:event_InsertaFilaTabla2ActionPerformed
 
     private void eliminarfilaTabla2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarfilaTabla2ActionPerformed
         // TODO add your handling code here:
-DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
-int selectedRow = jTable2.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+        int selectedRow = jTable2.getSelectedRow();
 
-if (selectedRow != -1) {
-    // Eliminar la fila seleccionada
-    model.removeRow(selectedRow);
-} else {
-    // Mostrar mensaje de error si no se ha seleccionado ninguna fila
-    JOptionPane.showMessageDialog(this, "Selecciona una fila para eliminar", "Error", JOptionPane.ERROR_MESSAGE);
-}
+        if (selectedRow != -1) {
+            // Eliminar la fila seleccionada
+            model.removeRow(selectedRow);
+
+// Crear un StringBuilder para construir el contenido del archivo
+            StringBuilder txtData = new StringBuilder();
+
+// Obtener los nombres de las columnas
+            int columnCount = model.getColumnCount();
+            for (int i = 0; i < columnCount; i++) {
+                txtData.append(model.getColumnName(i));
+                if (i < columnCount - 1) {
+                    txtData.append(",");
+                }
+            }
+            txtData.append("\n");
+
+// Obtener los datos de la tabla
+            int rowCount = model.getRowCount();
+            for (int i = 0; i < rowCount; i++) {
+                for (int j = 0; j < columnCount; j++) {
+                    txtData.append(model.getValueAt(i, j));
+                    if (j < columnCount - 1) {
+                        txtData.append(",");
+                    }
+                }
+                txtData.append("\n");
+            }
+
+                // Especificar la ubicación y el nombre de archivo fijo
+            String filePath = "Tecnico.txt";
+
+                // Escribir los datos en el archivo
+            try ( FileWriter fileWriter = new FileWriter(filePath)) {
+                fileWriter.write(txtData.toString());
+
+                // Mostrar mensaje de éxito
+                JOptionPane.showMessageDialog(this, "Eliminación exitosa");
+            } catch (IOException ex) {
+                ex.printStackTrace();
+                // Mostrar mensaje de error
+                JOptionPane.showMessageDialog(this, "Error al exportar los datos", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+
+        } else {
+            // Mostrar mensaje de error si no se ha seleccionado ninguna fila
+            JOptionPane.showMessageDialog(this, "Selecciona una fila para eliminar", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_eliminarfilaTabla2ActionPerformed
 
     private void InsertarFilaTabla1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertarFilaTabla1ActionPerformed
         // TODO add your handling code here:
-         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.addRow(new Object[model.getColumnCount()]);
+
     }//GEN-LAST:event_InsertarFilaTabla1ActionPerformed
 
     private void eliminarfilaTabla1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarfilaTabla1ActionPerformed
         // TODO add your handling code here:
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-int selectedRow = jTable1.getSelectedRow();
+        int selectedRow = jTable1.getSelectedRow();
 
-if (selectedRow != -1) {
-    // Eliminar la fila seleccionada
-    model.removeRow(selectedRow);
-} else {
-    // Mostrar mensaje de error si no se ha seleccionado ninguna fila
-    JOptionPane.showMessageDialog(this, "Selecciona una fila para eliminar", "Error", JOptionPane.ERROR_MESSAGE);
-}
+        if (selectedRow != -1) {
+            // Eliminar la fila seleccionada
+            model.removeRow(selectedRow);
+
+// Crear un StringBuilder para construir el contenido del archivo
+            StringBuilder txtData = new StringBuilder();
+
+// Obtener los nombres de las columnas
+            int columnCount = model.getColumnCount();
+            for (int i = 0; i < columnCount; i++) {
+                txtData.append(model.getColumnName(i));
+                if (i < columnCount - 1) {
+                    txtData.append(",");
+                }
+            }
+            txtData.append("\n");
+
+// Obtener los datos de la tabla
+            int rowCount = model.getRowCount();
+            for (int i = 0; i < rowCount; i++) {
+                for (int j = 0; j < columnCount; j++) {
+                    txtData.append(model.getValueAt(i, j));
+                    if (j < columnCount - 1) {
+                        txtData.append(",");
+                    }
+                }
+                txtData.append("\n");
+            }
+
+// Especificar la ubicación y el nombre de archivo fijo
+            String filePath = "Computadora_Agregar.txt";
+
+// Escribir los datos en el archivo
+            try ( FileWriter fileWriter = new FileWriter(filePath)) {
+                fileWriter.write(txtData.toString());
+
+                // Mostrar mensaje de éxito
+                JOptionPane.showMessageDialog(this, "Eliminacion exitosa");
+            } catch (IOException ex) {
+                ex.printStackTrace();
+                // Mostrar mensaje de error
+                JOptionPane.showMessageDialog(this, "Error al exportar los datos", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+
+        } else {
+            // Mostrar mensaje de error si no se ha seleccionado ninguna fila
+            JOptionPane.showMessageDialog(this, "Selecciona una fila para eliminar", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+
     }//GEN-LAST:event_eliminarfilaTabla1ActionPerformed
 
     private void btAgregarComputadorasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btAgregarComputadorasMouseClicked
@@ -421,36 +529,71 @@ if (selectedRow != -1) {
     }//GEN-LAST:event_btAgregarComputadorasActionPerformed
 
     private void frmcomputadoraWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_frmcomputadoraWindowOpened
-        // TODO add your handling code here:
-try {
-    String filePath = "Computadora_Agregar.txt";
+        try {
+            String filePath = "Computadora_Agregar.txt";
 
-    // Leer el archivo de texto
-    BufferedReader reader = new BufferedReader(new FileReader(filePath));
-    String line;
-    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            // Leer el archivo de texto
+            File file = new File(filePath);
+            if (file.exists()) {
+                BufferedReader reader = new BufferedReader(new FileReader(file));
+                String line;
+                DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
 
-    // Leer cada línea del archivo y agregar los datos a la tabla
-    boolean skipFirstLine = true;  // Variable para omitir la primera línea
-    while ((line = reader.readLine()) != null) {
-        if (skipFirstLine) {
-            skipFirstLine = false;
-            continue;  // Omitir la primera línea
+                // Leer cada línea del archivo y agregar los datos a la tabla
+                boolean skipFirstLine = true;  // Variable para omitir la primera línea
+                while ((line = reader.readLine()) != null) {
+                    if (skipFirstLine) {
+                        skipFirstLine = false;
+                        continue;  // Omitir la primera línea
+                    }
+                    String[] data = line.split(",");
+                    model.addRow(data);
+                }
+
+                reader.close();
+
+                // No mostrar ningún mensaje
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            // Mostrar mensaje de error
+            JOptionPane.showMessageDialog(this, "Error al importar los datos", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        String[] data = line.split(",");
-        model.addRow(data);
-    }
-
-    reader.close();
-
-    // Mostrar mensaje de éxito
-    JOptionPane.showMessageDialog(this, "Importación exitosa");
-} catch (IOException ex) {
-    ex.printStackTrace();
-    // Mostrar mensaje de error
-    JOptionPane.showMessageDialog(this, "Error al importar los datos", "Error", JOptionPane.ERROR_MESSAGE);
-}
     }//GEN-LAST:event_frmcomputadoraWindowOpened
+
+    private void frmtecnicoWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_frmtecnicoWindowOpened
+        // TODO add your handling code here:
+           try {
+            String filePath = "Computadora_Agregar.txt";
+
+            // Leer el archivo de texto
+            File file = new File(filePath);
+            if (file.exists()) {
+                BufferedReader reader = new BufferedReader(new FileReader(file));
+                String line;
+                DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+
+                // Leer cada línea del archivo y agregar los datos a la tabla
+                boolean skipFirstLine = true;  // Variable para omitir la primera línea
+                while ((line = reader.readLine()) != null) {
+                    if (skipFirstLine) {
+                        skipFirstLine = false;
+                        continue;  // Omitir la primera línea
+                    }
+                    String[] data = line.split(",");
+                    model.addRow(data);
+                }
+
+                reader.close();
+
+                // No mostrar ningún mensaje
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            // Mostrar mensaje de error
+            JOptionPane.showMessageDialog(this, "Error al importar los datos", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_frmtecnicoWindowOpened
 
     /**
      * @param args the command line arguments

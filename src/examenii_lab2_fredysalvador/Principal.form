@@ -13,14 +13,13 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jScrollPane1" alignment="0" pref="978" max="32767" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="InsertarTabla1" min="-2" pref="138" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="InsertarFilaTabla1" min="-2" pref="138" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="InsertarTabla1" min="-2" pref="162" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="eliminarfilaTabla1" min="-2" pref="138" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace pref="522" max="32767" attributes="0"/>
+                          <Component id="InsertarFilaTabla1" min="-2" pref="138" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -130,18 +129,10 @@
         </Container>
         <Component class="javax.swing.JButton" name="InsertarTabla1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Guardar Info"/>
+            <Property name="text" type="java.lang.String" value="Agregar Informacion"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="InsertarTabla1ActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="InsertarFilaTabla1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Insertar Fila"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="InsertarFilaTabla1ActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="eliminarfilaTabla1">
@@ -152,9 +143,20 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eliminarfilaTabla1ActionPerformed"/>
           </Events>
         </Component>
+        <Component class="javax.swing.JButton" name="InsertarFilaTabla1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Insertar Fila"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="InsertarFilaTabla1ActionPerformed"/>
+          </Events>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JDialog" name="frmtecnico">
+      <Events>
+        <EventHandler event="windowOpened" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="frmtecnicoWindowOpened"/>
+      </Events>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -162,14 +164,13 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jScrollPane2" alignment="0" pref="984" max="32767" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="InsertarTabla2" min="-2" pref="138" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="InsertaFilaTabla2" min="-2" pref="138" max="-2" attributes="0"/>
+                      <Component id="jScrollPane2" pref="984" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="InsertarTabla2" min="-2" pref="150" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="eliminarfilaTabla2" min="-2" pref="138" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="eliminarfilaTabla2" min="-2" pref="131" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="InsertaFilaTabla2" min="-2" pref="138" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -181,11 +182,11 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="InsertarTabla2" alignment="3" max="32767" attributes="0"/>
                       <Component id="InsertaFilaTabla2" alignment="3" max="32767" attributes="0"/>
-                      <Component id="eliminarfilaTabla2" alignment="3" max="32767" attributes="0"/>
+                      <Component id="eliminarfilaTabla2" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
               </Group>
@@ -273,7 +274,7 @@
         </Container>
         <Component class="javax.swing.JButton" name="InsertarTabla2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Guardar Info"/>
+            <Property name="text" type="java.lang.String" value="Agregar Informacion"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="InsertarTabla2ActionPerformed"/>

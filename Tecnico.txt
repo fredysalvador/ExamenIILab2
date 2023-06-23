@@ -1,0 +1,1 @@
+Nombre,Edad,Genero,cant_comp
