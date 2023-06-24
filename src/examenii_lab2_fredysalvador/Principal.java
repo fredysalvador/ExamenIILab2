@@ -1596,7 +1596,7 @@ public class Principal extends javax.swing.JFrame {
         double tiempo_ensamblaje;
 
         try {
-            tiempo_ensamblaje = Double.parseDouble(tensamblaje4.getText());
+            tiempo_ensamblaje = Double.parseDouble(tensamblaje5.getText());
             num_nucleo = Integer.parseInt(tnumnucleop.getText());
             velocidad = tvelocidadp.getText();
 
