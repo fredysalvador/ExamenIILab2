@@ -7,11 +7,14 @@ package examenii_lab2_fredysalvador;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import javax.swing.JCheckBox;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -67,18 +70,11 @@ public class Principal extends javax.swing.JFrame {
         InsertaFilaTabla2 = new javax.swing.JButton();
         eliminarfilaTabla2 = new javax.swing.JButton();
         frmpartes = new javax.swing.JDialog();
-        jCheckBox1 = new javax.swing.JCheckBox();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
         btSimulacion = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         FrmTodo = new javax.swing.JDialog();
         btram = new javax.swing.JButton();
         btdiscoduro = new javax.swing.JButton();
@@ -299,8 +295,6 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jCheckBox1.setText("Ram");
-
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -318,16 +312,6 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jScrollPane3.setViewportView(jTable3);
-
-        jCheckBox2.setText("Disco Duro");
-
-        jCheckBox3.setText("Bateria");
-
-        jCheckBox4.setText("Teclado");
-
-        jCheckBox5.setText("Pantalla");
-
-        jCheckBox6.setText("Procesador");
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -347,17 +331,15 @@ public class Principal extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(jTable4);
 
-        btSimulacion.setText("Simular Reparacion");
+        btSimulacion.setText("Simular Importacion de Piezas");
+        btSimulacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btSimulacionMouseClicked(evt);
+            }
+        });
         btSimulacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btSimulacionActionPerformed(evt);
-            }
-        });
-
-        jButton1.setText("Agregar Piezas");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
             }
         });
 
@@ -370,24 +352,9 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 838, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(frmpartesLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addGroup(frmpartesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btSimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox1))
-                .addGap(35, 35, 35)
-                .addGroup(frmpartesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(frmpartesLayout.createSequentialGroup()
-                        .addComponent(jCheckBox2)
-                        .addGap(31, 31, 31)
-                        .addComponent(jCheckBox3)
-                        .addGap(32, 32, 32)
-                        .addComponent(jCheckBox4)
-                        .addGap(29, 29, 29)
-                        .addComponent(jCheckBox5)
-                        .addGap(18, 18, 18)
-                        .addComponent(jCheckBox6))
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(37, 37, 37)
+                .addComponent(btSimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(frmpartesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(frmpartesLayout.createSequentialGroup()
                     .addContainerGap()
@@ -399,24 +366,14 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, frmpartesLayout.createSequentialGroup()
                 .addGap(154, 154, 154)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addGroup(frmpartesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox2)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jCheckBox3)
-                    .addComponent(jCheckBox4)
-                    .addComponent(jCheckBox5)
-                    .addComponent(jCheckBox6))
                 .addGap(18, 18, 18)
-                .addGroup(frmpartesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btSimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addComponent(btSimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(20, Short.MAX_VALUE))
             .addGroup(frmpartesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(frmpartesLayout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(293, Short.MAX_VALUE)))
+                    .addContainerGap(239, Short.MAX_VALUE)))
         );
 
         btram.setText("Ram");
@@ -1408,10 +1365,6 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btSimulacionActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void btramMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btramMouseClicked
         // TODO add your handling code here:
         frmram.pack();
@@ -1673,6 +1626,60 @@ public class Principal extends javax.swing.JFrame {
         frmpartes.setVisible(true);
     }//GEN-LAST:event_btgenerarsimulacionMouseClicked
 
+    private void btSimulacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btSimulacionMouseClicked
+     Object[] elementos = partes.toArray();
+
+    // Crear un arreglo de casillas de verificación para cada elemento
+    JCheckBox[] checkBoxes = new JCheckBox[elementos.length];
+    for (int i = 0; i < elementos.length; i++) {
+        checkBoxes[i] = new JCheckBox(elementos[i].toString());
+    }
+
+    // Mostrar el cuadro de diálogo de lista con casillas de verificación
+    int opcion = JOptionPane.showConfirmDialog(this, checkBoxes, "Seleccionar partes", JOptionPane.OK_CANCEL_OPTION);
+
+    if (opcion == JOptionPane.OK_OPTION) {
+        // Recorrer las casillas de verificación para obtener los elementos seleccionados
+        ArrayList<Parte> partesSeleccionadas = new ArrayList<>();
+        for (JCheckBox checkBox : checkBoxes) {
+            if (checkBox.isSelected()) {
+                partesSeleccionadas.add((Parte) elementos[Arrays.asList(checkBoxes).indexOf(checkBox)]);
+            }
+        }
+
+        // Guardar las partes seleccionadas y el valor de la primera columna de la fila seleccionada en un archivo de texto
+        guardarSimulacionEnArchivo(partesSeleccionadas);
+    }
+ 
+    
+    
+    }//GEN-LAST:event_btSimulacionMouseClicked
+
+    
+    private void guardarSimulacionEnArchivo(ArrayList<Parte> partesSeleccionadas) {
+    try {
+        // Abrir el archivo para escritura
+        FileWriter fileWriter = new FileWriter("simulacion.txt");
+        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+        
+        // Escribir las partes seleccionadas en el archivo
+        for (Parte parte : partesSeleccionadas) {
+            bufferedWriter.write(parte.toString());
+            bufferedWriter.newLine();
+        }
+        
+        // Cerrar el archivo
+        bufferedWriter.close();
+        
+        // Mostrar un mensaje de éxito
+        JOptionPane.showMessageDialog(this, "Simulación guardada correctamente en el archivo.");
+    } catch (IOException e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(this, "Ocurrió un error al guardar la simulación.");
+    }
+}
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -1744,13 +1751,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JDialog frmram;
     private javax.swing.JDialog frmteclado;
     private javax.swing.JDialog frmtecnico;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

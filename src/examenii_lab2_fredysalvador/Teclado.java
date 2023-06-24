@@ -10,8 +10,8 @@ package examenii_lab2_fredysalvador;
  */
 public class Teclado extends Parte{
     
-    String Material;
-    String Color;
+    public String Material;
+    public String Color;
 
     public Teclado(String Material, String Color, double tiempo_Ensamblaje) {
         super(tiempo_Ensamblaje);
@@ -42,6 +42,11 @@ public class Teclado extends Parte{
 
     public void setTiempo_Ensamblaje(double tiempo_Ensamblaje) {
         this.tiempo_Ensamblaje = tiempo_Ensamblaje;
+    }
+
+    @Override
+    public String toString() {
+        return "Teclado{" + "Material=" + Material + ", Color=" + Color + '}';
     }
     
     

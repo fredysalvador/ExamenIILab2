@@ -10,10 +10,20 @@ package examenii_lab2_fredysalvador;
  */
 public class Parte {
     double tiempo_Ensamblaje;
+    
+    
+    
 
     public Parte(double tiempo_Ensamblaje) {
         this.tiempo_Ensamblaje = tiempo_Ensamblaje;
     }
+
+    @Override
+    public String toString() {
+        return "Parte{" + "tiempo_Ensamblaje=" + tiempo_Ensamblaje + '}';
+    }
+
+
     
-    
+
 }
