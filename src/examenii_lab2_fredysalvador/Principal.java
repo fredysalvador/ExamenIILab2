@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -77,6 +78,69 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
         btSimulacion = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        FrmTodo = new javax.swing.JDialog();
+        btram = new javax.swing.JButton();
+        btdiscoduro = new javax.swing.JButton();
+        btbateria = new javax.swing.JButton();
+        btteclado = new javax.swing.JButton();
+        btpantalla = new javax.swing.JButton();
+        btprocesador = new javax.swing.JButton();
+        btgenerarsimulacion = new javax.swing.JButton();
+        frmram = new javax.swing.JDialog();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        tarear = new javax.swing.JTextField();
+        tmarcar = new javax.swing.JTextField();
+        btagregarram = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
+        tensamblaje = new javax.swing.JTextField();
+        frmdiscoduri = new javax.swing.JDialog();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        taread = new javax.swing.JTextField();
+        tmarcad = new javax.swing.JTextField();
+        btagregardiscoduro = new javax.swing.JButton();
+        jLabel20 = new javax.swing.JLabel();
+        tensamblaje1 = new javax.swing.JTextField();
+        frmbateria = new javax.swing.JDialog();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        tcapcihorasd = new javax.swing.JTextField();
+        tmateriald = new javax.swing.JTextField();
+        btagregarbateria = new javax.swing.JButton();
+        jLabel21 = new javax.swing.JLabel();
+        tensamblaje2 = new javax.swing.JTextField();
+        frmteclado = new javax.swing.JDialog();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        tmaterialt = new javax.swing.JTextField();
+        tcolort = new javax.swing.JTextField();
+        btagregarteclado = new javax.swing.JButton();
+        jLabel22 = new javax.swing.JLabel();
+        tensamblaje3 = new javax.swing.JTextField();
+        frmpantalla = new javax.swing.JDialog();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        ttactilp = new javax.swing.JTextField();
+        ttipop = new javax.swing.JTextField();
+        btagregarpantalla = new javax.swing.JButton();
+        jLabel23 = new javax.swing.JLabel();
+        tensamblaje4 = new javax.swing.JTextField();
+        frmprocesador = new javax.swing.JDialog();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        tnumnucleop = new javax.swing.JTextField();
+        tvelocidadp = new javax.swing.JTextField();
+        btagregarprocesador = new javax.swing.JButton();
+        jLabel24 = new javax.swing.JLabel();
+        tensamblaje5 = new javax.swing.JTextField();
         btAgregarComputadoras = new javax.swing.JButton();
         btAgregarTecnicos = new javax.swing.JButton();
         btAgregarPartes = new javax.swing.JButton();
@@ -290,21 +354,29 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Agregar Piezas");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout frmpartesLayout = new javax.swing.GroupLayout(frmpartes.getContentPane());
         frmpartes.getContentPane().setLayout(frmpartesLayout);
         frmpartesLayout.setHorizontalGroup(
             frmpartesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(frmpartesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 838, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(frmpartesLayout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addGroup(frmpartesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btSimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCheckBox1))
+                .addGap(35, 35, 35)
                 .addGroup(frmpartesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, frmpartesLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 838, Short.MAX_VALUE))
                     .addGroup(frmpartesLayout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addGroup(frmpartesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btSimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox1))
-                        .addGap(35, 35, 35)
                         .addComponent(jCheckBox2)
                         .addGap(31, 31, 31)
                         .addComponent(jCheckBox3)
@@ -313,9 +385,9 @@ public class Principal extends javax.swing.JFrame {
                         .addGap(29, 29, 29)
                         .addComponent(jCheckBox5)
                         .addGap(18, 18, 18)
-                        .addComponent(jCheckBox6)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(jCheckBox6))
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(frmpartesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(frmpartesLayout.createSequentialGroup()
                     .addContainerGap()
@@ -336,13 +408,524 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jCheckBox5)
                     .addComponent(jCheckBox6))
                 .addGap(18, 18, 18)
-                .addComponent(btSimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(frmpartesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btSimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(23, Short.MAX_VALUE))
             .addGroup(frmpartesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(frmpartesLayout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(293, Short.MAX_VALUE)))
+        );
+
+        btram.setText("Ram");
+        btram.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btramMouseClicked(evt);
+            }
+        });
+
+        btdiscoduro.setText("Disco Duro");
+        btdiscoduro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btdiscoduroMouseClicked(evt);
+            }
+        });
+
+        btbateria.setText("Bateria");
+        btbateria.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btbateriaMouseClicked(evt);
+            }
+        });
+
+        btteclado.setText("Teclado");
+        btteclado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bttecladoMouseClicked(evt);
+            }
+        });
+
+        btpantalla.setText("Pantalla");
+        btpantalla.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btpantallaMouseClicked(evt);
+            }
+        });
+
+        btprocesador.setText("Procesador");
+        btprocesador.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btprocesadorMouseClicked(evt);
+            }
+        });
+
+        btgenerarsimulacion.setText("Generar Simulacion");
+        btgenerarsimulacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btgenerarsimulacionMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout FrmTodoLayout = new javax.swing.GroupLayout(FrmTodo.getContentPane());
+        FrmTodo.getContentPane().setLayout(FrmTodoLayout);
+        FrmTodoLayout.setHorizontalGroup(
+            FrmTodoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FrmTodoLayout.createSequentialGroup()
+                .addContainerGap(73, Short.MAX_VALUE)
+                .addGroup(FrmTodoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(FrmTodoLayout.createSequentialGroup()
+                        .addComponent(btram, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btdiscoduro, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(FrmTodoLayout.createSequentialGroup()
+                        .addComponent(btteclado, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btpantalla, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(23, 23, 23)
+                .addGroup(FrmTodoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btprocesador, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btbateria, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(68, 68, 68))
+            .addGroup(FrmTodoLayout.createSequentialGroup()
+                .addGap(283, 283, 283)
+                .addComponent(btgenerarsimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        FrmTodoLayout.setVerticalGroup(
+            FrmTodoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FrmTodoLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(FrmTodoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btram, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btdiscoduro, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btbateria, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(FrmTodoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btteclado, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btpantalla, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btprocesador, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41)
+                .addComponent(btgenerarsimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel1.setText("Agregar Ram");
+
+        jLabel7.setText("Tamaño:");
+
+        jLabel8.setText("Marca:");
+
+        btagregarram.setText("Agregar");
+        btagregarram.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btagregarramMouseClicked(evt);
+            }
+        });
+        btagregarram.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btagregarramActionPerformed(evt);
+            }
+        });
+
+        jLabel19.setText("Tiempo Ensamblaje:");
+
+        javax.swing.GroupLayout frmramLayout = new javax.swing.GroupLayout(frmram.getContentPane());
+        frmram.getContentPane().setLayout(frmramLayout);
+        frmramLayout.setHorizontalGroup(
+            frmramLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(frmramLayout.createSequentialGroup()
+                .addGroup(frmramLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(frmramLayout.createSequentialGroup()
+                        .addGap(93, 93, 93)
+                        .addComponent(jLabel1))
+                    .addGroup(frmramLayout.createSequentialGroup()
+                        .addGap(133, 133, 133)
+                        .addComponent(btagregarram, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(frmramLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(frmramLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(frmramLayout.createSequentialGroup()
+                                .addComponent(jLabel19)
+                                .addGap(18, 18, 18)
+                                .addComponent(tensamblaje, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(frmramLayout.createSequentialGroup()
+                                .addGroup(frmramLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel8))
+                                .addGap(18, 18, 18)
+                                .addGroup(frmramLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tarear, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tmarcar, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(74, Short.MAX_VALUE))
+        );
+        frmramLayout.setVerticalGroup(
+            frmramLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(frmramLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel1)
+                .addGap(27, 27, 27)
+                .addGroup(frmramLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(tensamblaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(frmramLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(tarear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(frmramLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(tmarcar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btagregarram, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(37, Short.MAX_VALUE))
+        );
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel2.setText("Agregar Disco Duro");
+
+        jLabel9.setText("Tamaño:");
+
+        jLabel10.setText("Marca:");
+
+        btagregardiscoduro.setText("Agregar");
+        btagregardiscoduro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btagregardiscoduroMouseClicked(evt);
+            }
+        });
+
+        jLabel20.setText("Tiempo Ensamblaje:");
+
+        javax.swing.GroupLayout frmdiscoduriLayout = new javax.swing.GroupLayout(frmdiscoduri.getContentPane());
+        frmdiscoduri.getContentPane().setLayout(frmdiscoduriLayout);
+        frmdiscoduriLayout.setHorizontalGroup(
+            frmdiscoduriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(frmdiscoduriLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(frmdiscoduriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(frmdiscoduriLayout.createSequentialGroup()
+                        .addGroup(frmdiscoduriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10))
+                        .addGap(18, 18, 18)
+                        .addGroup(frmdiscoduriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(taread, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tmarcad, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(frmdiscoduriLayout.createSequentialGroup()
+                        .addComponent(jLabel20)
+                        .addGap(18, 18, 18)
+                        .addComponent(tensamblaje1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, frmdiscoduriLayout.createSequentialGroup()
+                .addContainerGap(46, Short.MAX_VALUE)
+                .addGroup(frmdiscoduriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, frmdiscoduriLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(40, 40, 40))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, frmdiscoduriLayout.createSequentialGroup()
+                        .addComponent(btagregardiscoduro, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(114, 114, 114))))
+        );
+        frmdiscoduriLayout.setVerticalGroup(
+            frmdiscoduriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(frmdiscoduriLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGroup(frmdiscoduriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(tensamblaje1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(frmdiscoduriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(taread, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(frmdiscoduriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(tmarcad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addComponent(btagregardiscoduro, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
+        );
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel3.setText("Agregar Bateria");
+
+        jLabel11.setText("Capacidad Horas:");
+
+        jLabel12.setText("Material:");
+
+        tcapcihorasd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tcapcihorasdActionPerformed(evt);
+            }
+        });
+
+        btagregarbateria.setText("Agregar");
+        btagregarbateria.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btagregarbateriaMouseClicked(evt);
+            }
+        });
+        btagregarbateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btagregarbateriaActionPerformed(evt);
+            }
+        });
+
+        jLabel21.setText("Tiempo Ensamblaje:");
+
+        javax.swing.GroupLayout frmbateriaLayout = new javax.swing.GroupLayout(frmbateria.getContentPane());
+        frmbateria.getContentPane().setLayout(frmbateriaLayout);
+        frmbateriaLayout.setHorizontalGroup(
+            frmbateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(frmbateriaLayout.createSequentialGroup()
+                .addGap(132, 132, 132)
+                .addComponent(btagregarbateria, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, frmbateriaLayout.createSequentialGroup()
+                .addContainerGap(31, Short.MAX_VALUE)
+                .addGroup(frmbateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(frmbateriaLayout.createSequentialGroup()
+                        .addComponent(jLabel21)
+                        .addGap(18, 18, 18)
+                        .addComponent(tensamblaje2, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(frmbateriaLayout.createSequentialGroup()
+                        .addGroup(frmbateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel12))
+                        .addGap(18, 18, 18)
+                        .addGroup(frmbateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tcapcihorasd, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tmateriald, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel3))
+                .addGap(74, 74, 74))
+        );
+        frmbateriaLayout.setVerticalGroup(
+            frmbateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(frmbateriaLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel3)
+                .addGap(39, 39, 39)
+                .addGroup(frmbateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(tensamblaje2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(frmbateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(tcapcihorasd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(frmbateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(tmateriald, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btagregarbateria, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel4.setText("Agregar Teclado");
+
+        jLabel13.setText("Material:");
+
+        jLabel14.setText("Color:");
+
+        btagregarteclado.setText("Agregar");
+        btagregarteclado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btagregartecladoMouseClicked(evt);
+            }
+        });
+
+        jLabel22.setText("Tiempo Ensamblaje:");
+
+        javax.swing.GroupLayout frmtecladoLayout = new javax.swing.GroupLayout(frmteclado.getContentPane());
+        frmteclado.getContentPane().setLayout(frmtecladoLayout);
+        frmtecladoLayout.setHorizontalGroup(
+            frmtecladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, frmtecladoLayout.createSequentialGroup()
+                .addContainerGap(64, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addGap(74, 74, 74))
+            .addGroup(frmtecladoLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(frmtecladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(frmtecladoLayout.createSequentialGroup()
+                        .addComponent(jLabel22)
+                        .addGap(18, 18, 18)
+                        .addComponent(tensamblaje3, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(frmtecladoLayout.createSequentialGroup()
+                        .addGroup(frmtecladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel14))
+                        .addGap(18, 18, 18)
+                        .addGroup(frmtecladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btagregarteclado, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tmaterialt, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tcolort, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        frmtecladoLayout.setVerticalGroup(
+            frmtecladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(frmtecladoLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel4)
+                .addGap(29, 29, 29)
+                .addGroup(frmtecladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(tensamblaje3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(frmtecladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(tmaterialt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(frmtecladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(tcolort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btagregarteclado, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel5.setText("Agregar Pantalla");
+
+        jLabel15.setText("Es Tactil:");
+
+        jLabel16.setText("Tipo:");
+
+        btagregarpantalla.setText("Agregar");
+        btagregarpantalla.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btagregarpantallaMouseClicked(evt);
+            }
+        });
+
+        jLabel23.setText("Tiempo Ensamblaje:");
+
+        javax.swing.GroupLayout frmpantallaLayout = new javax.swing.GroupLayout(frmpantalla.getContentPane());
+        frmpantalla.getContentPane().setLayout(frmpantallaLayout);
+        frmpantallaLayout.setHorizontalGroup(
+            frmpantallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, frmpantallaLayout.createSequentialGroup()
+                .addContainerGap(64, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addGap(74, 74, 74))
+            .addGroup(frmpantallaLayout.createSequentialGroup()
+                .addGroup(frmpantallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(frmpantallaLayout.createSequentialGroup()
+                        .addGap(134, 134, 134)
+                        .addComponent(btagregarpantalla, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(frmpantallaLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel23)
+                        .addGap(18, 18, 18)
+                        .addComponent(tensamblaje4, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(frmpantallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(frmpantallaLayout.createSequentialGroup()
+                    .addGap(82, 82, 82)
+                    .addGroup(frmpantallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel15)
+                        .addComponent(jLabel16))
+                    .addGap(18, 18, 18)
+                    .addGroup(frmpantallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(ttactilp, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ttipop, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap(84, Short.MAX_VALUE)))
+        );
+        frmpantallaLayout.setVerticalGroup(
+            frmpantallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(frmpantallaLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel5)
+                .addGap(18, 18, 18)
+                .addGroup(frmpantallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(tensamblaje4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
+                .addComponent(btagregarpantalla, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
+            .addGroup(frmpantallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(frmpantallaLayout.createSequentialGroup()
+                    .addGap(119, 119, 119)
+                    .addGroup(frmpantallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel15)
+                        .addComponent(ttactilp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(18, 18, 18)
+                    .addGroup(frmpantallaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel16)
+                        .addComponent(ttipop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap(119, Short.MAX_VALUE)))
+        );
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel6.setText("Agregar Procesador");
+
+        jLabel17.setText("Numero de Nucleos:");
+
+        jLabel18.setText("Velocidad:");
+
+        btagregarprocesador.setText("Agregar");
+        btagregarprocesador.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btagregarprocesadorMouseClicked(evt);
+            }
+        });
+
+        jLabel24.setText("Tiempo Ensamblaje:");
+
+        javax.swing.GroupLayout frmprocesadorLayout = new javax.swing.GroupLayout(frmprocesador.getContentPane());
+        frmprocesador.getContentPane().setLayout(frmprocesadorLayout);
+        frmprocesadorLayout.setHorizontalGroup(
+            frmprocesadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(frmprocesadorLayout.createSequentialGroup()
+                .addGroup(frmprocesadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(frmprocesadorLayout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addGroup(frmprocesadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addGroup(frmprocesadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(frmprocesadorLayout.createSequentialGroup()
+                                    .addComponent(jLabel24)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(tensamblaje5, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(frmprocesadorLayout.createSequentialGroup()
+                                    .addGroup(frmprocesadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel17)
+                                        .addComponent(jLabel18))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(frmprocesadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(tnumnucleop, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(tvelocidadp, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addGroup(frmprocesadorLayout.createSequentialGroup()
+                        .addGap(129, 129, 129)
+                        .addComponent(btagregarprocesador, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(35, Short.MAX_VALUE))
+        );
+        frmprocesadorLayout.setVerticalGroup(
+            frmprocesadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(frmprocesadorLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel6)
+                .addGap(24, 24, 24)
+                .addGroup(frmprocesadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24)
+                    .addComponent(tensamblaje5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(frmprocesadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(tnumnucleop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(frmprocesadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(tvelocidadp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addComponent(btagregarprocesador, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -788,10 +1371,10 @@ public class Principal extends javax.swing.JFrame {
 
     private void btAgregarPartesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btAgregarPartesMouseClicked
         // TODO add your handling code here:
-        frmpartes.pack();
-        frmpartes.setLocationRelativeTo(this);
-        frmpartes.setModal(true);
-        frmpartes.setVisible(true);
+        FrmTodo.pack();
+        FrmTodo.setLocationRelativeTo(this);
+        FrmTodo.setModal(true);
+        FrmTodo.setVisible(true);
     }//GEN-LAST:event_btAgregarPartesMouseClicked
 
     private void btSimulacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSimulacionActionPerformed
@@ -827,6 +1410,257 @@ if (value instanceof Number) {
 }}
     }//GEN-LAST:event_btSimulacionActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btramMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btramMouseClicked
+        // TODO add your handling code here:
+        frmram.pack();
+        frmram.setLocationRelativeTo(this);
+        frmram.setModal(true);
+        frmram.setVisible(true);
+        
+    }//GEN-LAST:event_btramMouseClicked
+
+    private void btdiscoduroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btdiscoduroMouseClicked
+        // TODO add your handling code here:
+        frmdiscoduri.pack();
+        frmdiscoduri.setLocationRelativeTo(this);
+        frmdiscoduri.setModal(true);
+        frmdiscoduri.setVisible(true);
+    }//GEN-LAST:event_btdiscoduroMouseClicked
+
+    private void btbateriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btbateriaMouseClicked
+        // TODO add your handling code here:
+        frmbateria.pack();
+        frmbateria.setLocationRelativeTo(this);
+        frmbateria.setModal(true);
+        frmbateria.setVisible(true);
+    }//GEN-LAST:event_btbateriaMouseClicked
+
+    private void bttecladoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bttecladoMouseClicked
+        // TODO add your handling code here:
+        frmteclado.pack();
+        frmteclado.setLocationRelativeTo(this);
+        frmteclado.setModal(true);
+        frmteclado.setVisible(true);
+    }//GEN-LAST:event_bttecladoMouseClicked
+
+    private void btpantallaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btpantallaMouseClicked
+        // TODO add your handling code here:
+        frmpantalla.pack();
+        frmpantalla.setLocationRelativeTo(this);
+        frmpantalla.setModal(true);
+        frmpantalla.setVisible(true);
+    }//GEN-LAST:event_btpantallaMouseClicked
+
+    private void btprocesadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btprocesadorMouseClicked
+        // TODO add your handling code here:
+        frmprocesador.pack();
+        frmprocesador.setLocationRelativeTo(this);
+        frmprocesador.setModal(true);
+        frmprocesador.setVisible(true);
+    }//GEN-LAST:event_btprocesadorMouseClicked
+
+    private void btagregarramMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btagregarramMouseClicked
+        // TODO add your handling code here:
+           String area, marca;
+           double tiempo_ensamblaje;
+        try {     
+            tiempo_ensamblaje = Double.parseDouble(tensamblaje.getText());
+            area = tarear.getText();
+            marca = tmarcar.getText();
+            
+ 
+            RAM r = new RAM(area, marca, tiempo_ensamblaje);
+            
+            partes.add(r);
+            
+            JOptionPane.showMessageDialog(this,
+                 "Valores Ingresado Correctamente");
+            
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this,
+                 "Ocurrio un error y no se guardaron los datos");
+        }
+    }//GEN-LAST:event_btagregarramMouseClicked
+
+    private void btagregarramActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btagregarramActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btagregarramActionPerformed
+
+    private void btagregardiscoduroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btagregardiscoduroMouseClicked
+        // TODO add your handling code here:
+                // TODO add your handling code here:
+           String area, marca;
+           double tiempo_ensamblaje;
+        try {     
+            tiempo_ensamblaje = Double.parseDouble(tensamblaje1.getText());
+            area = taread.getText();
+            marca = tmarcad.getText();
+            
+ 
+            DiscoDuro r = new DiscoDuro(area, marca, tiempo_ensamblaje);
+            
+            partes.add(r);
+            
+            JOptionPane.showMessageDialog(this,
+                 "Valores Ingresado Correctamente");
+            
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this,
+                 "Ocurrio un error y no se guardaron los datos");
+        }
+    }//GEN-LAST:event_btagregardiscoduroMouseClicked
+
+    private void btagregarbateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btagregarbateriaActionPerformed
+        // TODO add your handling code here:
+              String area, marca;
+           double tiempo_ensamblaje;
+        try {     
+            tiempo_ensamblaje = Double.parseDouble(tensamblaje2.getText());
+            area = tarear.getText();
+            marca = tmarcar.getText();
+            
+ 
+            RAM r = new RAM(area, marca, tiempo_ensamblaje);
+            
+            partes.add(r);
+            
+            JOptionPane.showMessageDialog(this,
+                 "Valores Ingresado Correctamente");
+            
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this,
+                 "Ocurrio un error y no se guardaron los datos");
+        }
+    }//GEN-LAST:event_btagregarbateriaActionPerformed
+
+    private void btagregarbateriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btagregarbateriaMouseClicked
+        // TODO add your handling code here:
+            // TODO add your handling code here:
+                // TODO add your handling code here:
+           String cap_hora, material;
+           double tiempo_ensamblaje;
+        try {     
+            tiempo_ensamblaje = Double.parseDouble(tensamblaje2.getText());
+            cap_hora = tcapcihorasd.getText();
+            material = tmateriald.getText();
+            
+ 
+            Bateria r = new Bateria(cap_hora, material, tiempo_ensamblaje);
+            
+            partes.add(r);
+            
+            JOptionPane.showMessageDialog(this,
+                 "Valores Ingresado Correctamente");
+            
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this,
+                 "Ocurrio un error y no se guardaron los datos");
+        }
+        
+    }//GEN-LAST:event_btagregarbateriaMouseClicked
+
+    private void tcapcihorasdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tcapcihorasdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tcapcihorasdActionPerformed
+
+    private void btagregartecladoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btagregartecladoMouseClicked
+        // TODO add your handling code here:
+           String color, material;
+           double tiempo_ensamblaje;
+        try {     
+            tiempo_ensamblaje = Double.parseDouble(tensamblaje3.getText());
+            color = tcolort.getText();
+            material = tmaterialt.getText();
+            
+ 
+            Teclado r = new Teclado(material, color, tiempo_ensamblaje);
+            
+            partes.add(r);
+            
+            JOptionPane.showMessageDialog(this,
+                 "Valores Ingresado Correctamente");
+            
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this,
+                 "Ocurrio un error y no se guardaron los datos");
+        }
+        
+    }//GEN-LAST:event_btagregartecladoMouseClicked
+
+    private void btagregarpantallaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btagregarpantallaMouseClicked
+        // TODO add your handling code here:
+                 String tactil, tipo;
+           double tiempo_ensamblaje;
+        try {     
+            tiempo_ensamblaje = Double.parseDouble(tensamblaje4.getText());
+            tactil = ttactilp.getText();
+            tipo = ttipop.getText();
+            
+ 
+            Pantalla r = new Pantalla(tactil, tipo, tiempo_ensamblaje);
+            
+            partes.add(r);
+            
+            JOptionPane.showMessageDialog(this,
+                 "Valores Ingresado Correctamente");
+            
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this,
+                 "Ocurrio un error y no se guardaron los datos");
+        }
+    }//GEN-LAST:event_btagregarpantallaMouseClicked
+
+    private void btagregarprocesadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btagregarprocesadorMouseClicked
+        // TODO add your handling code here:
+           int num_nucleo; 
+           String velocidad;
+           double tiempo_ensamblaje;
+           
+        try {     
+            tiempo_ensamblaje = Double.parseDouble(tensamblaje4.getText());
+            num_nucleo = Integer.parseInt(tnumnucleop.getText());
+            velocidad = tvelocidadp.getText();
+            
+ 
+            Procesador r = new Procesador(num_nucleo, velocidad, tiempo_ensamblaje);
+            
+            partes.add(r);
+            
+            JOptionPane.showMessageDialog(this,
+                 "Valores Ingresado Correctamente");
+            
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this,
+                 "Ocurrio un error y no se guardaron los datos");
+        }
+    }//GEN-LAST:event_btagregarprocesadorMouseClicked
+
+    private void btgenerarsimulacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btgenerarsimulacionMouseClicked
+        // TODO add your handling code here:
+        frmpartes.pack();
+        frmpartes.setLocationRelativeTo(this);
+        frmpartes.setModal(true);
+        frmpartes.setVisible(true);
+    }//GEN-LAST:event_btgenerarsimulacionMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -861,8 +1695,11 @@ if (value instanceof Number) {
             }
         });
     }
+    
+    ArrayList<Parte> partes = new ArrayList();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDialog FrmTodo;
     private javax.swing.JButton InsertaFilaTabla2;
     private javax.swing.JButton InsertarFilaTabla1;
     private javax.swing.JButton InsertarTabla1;
@@ -871,17 +1708,61 @@ if (value instanceof Number) {
     private javax.swing.JButton btAgregarPartes;
     private javax.swing.JButton btAgregarTecnicos;
     private javax.swing.JButton btSimulacion;
+    private javax.swing.JButton btagregarbateria;
+    private javax.swing.JButton btagregardiscoduro;
+    private javax.swing.JButton btagregarpantalla;
+    private javax.swing.JButton btagregarprocesador;
+    private javax.swing.JButton btagregarram;
+    private javax.swing.JButton btagregarteclado;
+    private javax.swing.JButton btbateria;
+    private javax.swing.JButton btdiscoduro;
+    private javax.swing.JButton btgenerarsimulacion;
+    private javax.swing.JButton btpantalla;
+    private javax.swing.JButton btprocesador;
+    private javax.swing.JButton btram;
+    private javax.swing.JButton btteclado;
     private javax.swing.JButton eliminarfilaTabla1;
     private javax.swing.JButton eliminarfilaTabla2;
+    private javax.swing.JDialog frmbateria;
     private javax.swing.JDialog frmcomputadora;
+    private javax.swing.JDialog frmdiscoduri;
+    private javax.swing.JDialog frmpantalla;
     private javax.swing.JDialog frmpartes;
+    private javax.swing.JDialog frmprocesador;
+    private javax.swing.JDialog frmram;
+    private javax.swing.JDialog frmteclado;
     private javax.swing.JDialog frmtecnico;
+    private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JCheckBox jCheckBox5;
     private javax.swing.JCheckBox jCheckBox6;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -890,5 +1771,23 @@ if (value instanceof Number) {
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
+    private javax.swing.JTextField taread;
+    private javax.swing.JTextField tarear;
+    private javax.swing.JTextField tcapcihorasd;
+    private javax.swing.JTextField tcolort;
+    private javax.swing.JTextField tensamblaje;
+    private javax.swing.JTextField tensamblaje1;
+    private javax.swing.JTextField tensamblaje2;
+    private javax.swing.JTextField tensamblaje3;
+    private javax.swing.JTextField tensamblaje4;
+    private javax.swing.JTextField tensamblaje5;
+    private javax.swing.JTextField tmarcad;
+    private javax.swing.JTextField tmarcar;
+    private javax.swing.JTextField tmateriald;
+    private javax.swing.JTextField tmaterialt;
+    private javax.swing.JTextField tnumnucleop;
+    private javax.swing.JTextField ttactilp;
+    private javax.swing.JTextField ttipop;
+    private javax.swing.JTextField tvelocidadp;
     // End of variables declaration//GEN-END:variables
 }
