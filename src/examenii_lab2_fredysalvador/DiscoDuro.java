@@ -41,6 +41,11 @@ public class DiscoDuro extends Parte{
     public void setTiempo_Ensamblaje(double tiempo_Ensamblaje) {
         this.tiempo_Ensamblaje = tiempo_Ensamblaje;
     }
+
+    @Override
+    public String toString() {
+        return "DiscoDuro{" + "tama\u00f1o=" + tamaño + ", marca=" + marca + '}';
+    }
     
     
 }

@@ -41,6 +41,11 @@ public class Procesador extends Parte{
     public void setTiempo_Ensamblaje(double tiempo_Ensamblaje) {
         this.tiempo_Ensamblaje = tiempo_Ensamblaje;
     }
+
+    @Override
+    public String toString() {
+        return "Procesador{" + "num_nucleos=" + num_nucleos + ", Velocidad=" + Velocidad + '}';
+    }
     
     
 }

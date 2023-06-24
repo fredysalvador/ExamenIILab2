@@ -42,4 +42,11 @@ public class Bateria extends Parte{
         this.tiempo_Ensamblaje = tiempo_Ensamblaje;
     }
 
+    @Override
+    public String toString() {
+        return "Bateria{" + "capacidad_hora=" + capacidad_hora + ", material=" + material + '}';
+    }
+
+    
+    
 }

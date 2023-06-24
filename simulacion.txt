@@ -1,2 +1,2 @@
-Parte{tiempo_Ensamblaje=32.0}
-RAM{tamaño=espacial, marca=Yahu}
+Pantalla{Tactil=si, Tipo=si}
+DiscoDuro{tamaño=no, marca=Guchi}
