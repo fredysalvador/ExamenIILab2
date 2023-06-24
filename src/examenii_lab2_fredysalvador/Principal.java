@@ -1123,10 +1123,10 @@ public class Principal extends javax.swing.JFrame {
                 txtData.append("\n");
             }
 
-                // Especificar la ubicación y el nombre de archivo fijo
+            // Especificar la ubicación y el nombre de archivo fijo
             String filePath = "Tecnico.txt";
 
-                // Escribir los datos en el archivo
+            // Escribir los datos en el archivo
             try ( FileWriter fileWriter = new FileWriter(filePath)) {
                 fileWriter.write(txtData.toString());
 
@@ -1267,7 +1267,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void frmtecnicoWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_frmtecnicoWindowOpened
         // TODO add your handling code here:
-           try {
+        try {
             String filePath = "Tecnico.txt";
 
             // Leer el archivo de texto
@@ -1301,7 +1301,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void frmpartesWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_frmpartesWindowOpened
         // TODO add your handling code here:
-          try {
+        try {
             String filePath = "Computadora_Agregar.txt";
 
             // Leer el archivo de texto
@@ -1331,11 +1331,9 @@ public class Principal extends javax.swing.JFrame {
             // Mostrar mensaje de error
             JOptionPane.showMessageDialog(this, "Error al importar los datos", "Error", JOptionPane.ERROR_MESSAGE);
         }
-          
-          
-          
-               // TODO add your handling code here:
-           try {
+
+        // TODO add your handling code here:
+        try {
             String filePath = "Tecnico.txt";
 
             // Leer el archivo de texto
@@ -1365,8 +1363,8 @@ public class Principal extends javax.swing.JFrame {
             // Mostrar mensaje de error
             JOptionPane.showMessageDialog(this, "Error al importar los datos", "Error", JOptionPane.ERROR_MESSAGE);
         }
-          
-          
+
+
     }//GEN-LAST:event_frmpartesWindowOpened
 
     private void btAgregarPartesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btAgregarPartesMouseClicked
@@ -1378,36 +1376,36 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btAgregarPartesMouseClicked
 
     private void btSimulacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSimulacionActionPerformed
- // Obtener el valor de la columna 4 (índice 3) de la fila seleccionada
- 
-  int selectedRow = jTable4.getSelectedRow();
+        // Obtener el valor de la columna 4 (índice 3) de la fila seleccionada
 
-    // Verificar si se ha seleccionado una fila
-    if (selectedRow != -1) {
-Object value = jTable4.getValueAt(selectedRow, 3);
+        int selectedRow = jTable4.getSelectedRow();
+
+        // Verificar si se ha seleccionado una fila
+        if (selectedRow != -1) {
+            Object value = jTable4.getValueAt(selectedRow, 3);
 
 // Verificar si el valor es de tipo numérico
-if (value instanceof Number) {
-    // Convertir el valor a un tipo numérico específico (por ejemplo, int)
-    int column4Value = ((Number) value).intValue();
+            if (value instanceof Number) {
+                // Convertir el valor a un tipo numérico específico (por ejemplo, int)
+                int column4Value = ((Number) value).intValue();
 
-    // Calcular el porcentaje de fallas basado en el valor obtenido
-    double porcentajeFallas;
-    if (column4Value >= 1 && column4Value <= 5) {
-        porcentajeFallas = 0.3;  // 30% de fallar
-    } else if (column4Value >= 6 && column4Value <= 15) {
-        porcentajeFallas = 0.22;  // 22% de fallar
-    } else if (column4Value >= 16 && column4Value <= 30) {
-        porcentajeFallas = 0.13;  // 13% de fallar
-    } else {
-        porcentajeFallas = 0.07;  // 7% de fallar
-    }
+                // Calcular el porcentaje de fallas basado en el valor obtenido
+                double porcentajeFallas;
+                if (column4Value >= 1 && column4Value <= 5) {
+                    porcentajeFallas = 0.3;  // 30% de fallar
+                } else if (column4Value >= 6 && column4Value <= 15) {
+                    porcentajeFallas = 0.22;  // 22% de fallar
+                } else if (column4Value >= 16 && column4Value <= 30) {
+                    porcentajeFallas = 0.13;  // 13% de fallar
+                } else {
+                    porcentajeFallas = 0.07;  // 7% de fallar
+                }
 
-    // Utilizar el porcentaje de fallas como necesites
-    // ...
-
-    JOptionPane.showMessageDialog(this, "Porcentaje de fallas: " + (porcentajeFallas * 100) + "%");
-}}
+                // Utilizar el porcentaje de fallas como necesites
+                // ...
+                JOptionPane.showMessageDialog(this, "Porcentaje de fallas: " + (porcentajeFallas * 100) + "%");
+            }
+        }
     }//GEN-LAST:event_btSimulacionActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -1420,7 +1418,7 @@ if (value instanceof Number) {
         frmram.setLocationRelativeTo(this);
         frmram.setModal(true);
         frmram.setVisible(true);
-        
+
     }//GEN-LAST:event_btramMouseClicked
 
     private void btdiscoduroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btdiscoduroMouseClicked
@@ -1465,26 +1463,28 @@ if (value instanceof Number) {
 
     private void btagregarramMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btagregarramMouseClicked
         // TODO add your handling code here:
-           String area, marca;
-           double tiempo_ensamblaje;
-        try {     
+        String area, marca;
+        double tiempo_ensamblaje;
+        try {
             tiempo_ensamblaje = Double.parseDouble(tensamblaje.getText());
             area = tarear.getText();
             marca = tmarcar.getText();
-            
- 
+
             RAM r = new RAM(area, marca, tiempo_ensamblaje);
-            
+
             partes.add(r);
-            
+
             JOptionPane.showMessageDialog(this,
-                 "Valores Ingresado Correctamente");
-            
-            
+                    "Valores Ingresado Correctamente");
+
+            tensamblaje.setText("");
+            tarear.setText("");
+            tmarcar.setText("");
+
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this,
-                 "Ocurrio un error y no se guardaron los datos");
+                    "Ocurrio un error y no se guardaron los datos");
         }
     }//GEN-LAST:event_btagregarramMouseClicked
 
@@ -1494,81 +1494,87 @@ if (value instanceof Number) {
 
     private void btagregardiscoduroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btagregardiscoduroMouseClicked
         // TODO add your handling code here:
-                // TODO add your handling code here:
-           String area, marca;
-           double tiempo_ensamblaje;
-        try {     
+        // TODO add your handling code here:
+        String area, marca;
+        double tiempo_ensamblaje;
+        try {
             tiempo_ensamblaje = Double.parseDouble(tensamblaje1.getText());
             area = taread.getText();
             marca = tmarcad.getText();
-            
- 
+
             DiscoDuro r = new DiscoDuro(area, marca, tiempo_ensamblaje);
-            
+
             partes.add(r);
-            
+
             JOptionPane.showMessageDialog(this,
-                 "Valores Ingresado Correctamente");
-            
-            
+                    "Valores Ingresado Correctamente");
+
+            tensamblaje1.setText("");
+            taread.setText("");
+            tmarcad.setText("");
+
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this,
-                 "Ocurrio un error y no se guardaron los datos");
+                    "Ocurrio un error y no se guardaron los datos");
         }
     }//GEN-LAST:event_btagregardiscoduroMouseClicked
 
     private void btagregarbateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btagregarbateriaActionPerformed
         // TODO add your handling code here:
-              String area, marca;
-           double tiempo_ensamblaje;
-        try {     
+        String area, marca;
+        double tiempo_ensamblaje;
+        try {
             tiempo_ensamblaje = Double.parseDouble(tensamblaje2.getText());
             area = tarear.getText();
             marca = tmarcar.getText();
-            
- 
+
             RAM r = new RAM(area, marca, tiempo_ensamblaje);
-            
+
             partes.add(r);
-            
+
             JOptionPane.showMessageDialog(this,
-                 "Valores Ingresado Correctamente");
-            
-            
+                    "Valores Ingresado Correctamente");
+
+            tensamblaje2.setText("");
+            tarear.setText("");
+            tmarcar.setText("");
+
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this,
-                 "Ocurrio un error y no se guardaron los datos");
+                    "Ocurrio un error y no se guardaron los datos");
         }
     }//GEN-LAST:event_btagregarbateriaActionPerformed
 
     private void btagregarbateriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btagregarbateriaMouseClicked
         // TODO add your handling code here:
-            // TODO add your handling code here:
-                // TODO add your handling code here:
-           String cap_hora, material;
-           double tiempo_ensamblaje;
-        try {     
+        // TODO add your handling code here:
+        // TODO add your handling code here:
+        String cap_hora, material;
+        double tiempo_ensamblaje;
+        try {
             tiempo_ensamblaje = Double.parseDouble(tensamblaje2.getText());
             cap_hora = tcapcihorasd.getText();
             material = tmateriald.getText();
-            
- 
+
             Bateria r = new Bateria(cap_hora, material, tiempo_ensamblaje);
-            
+
             partes.add(r);
-            
+
             JOptionPane.showMessageDialog(this,
-                 "Valores Ingresado Correctamente");
-            
-            
+                    "Valores Ingresado Correctamente");
+
+            tensamblaje2.setText("");
+            tcapcihorasd.setText("");
+            tmateriald.setText("");
+
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this,
-                 "Ocurrio un error y no se guardaron los datos");
+                    "Ocurrio un error y no se guardaron los datos");
         }
-        
+
     }//GEN-LAST:event_btagregarbateriaMouseClicked
 
     private void tcapcihorasdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tcapcihorasdActionPerformed
@@ -1577,79 +1583,85 @@ if (value instanceof Number) {
 
     private void btagregartecladoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btagregartecladoMouseClicked
         // TODO add your handling code here:
-           String color, material;
-           double tiempo_ensamblaje;
-        try {     
+        String color, material;
+        double tiempo_ensamblaje;
+        try {
             tiempo_ensamblaje = Double.parseDouble(tensamblaje3.getText());
             color = tcolort.getText();
             material = tmaterialt.getText();
-            
- 
+
             Teclado r = new Teclado(material, color, tiempo_ensamblaje);
-            
+
             partes.add(r);
-            
+
             JOptionPane.showMessageDialog(this,
-                 "Valores Ingresado Correctamente");
-            
-            
+                    "Valores Ingresado Correctamente");
+
+            tensamblaje3.setText("");
+            tcolort.setText("");
+            tmaterialt.setText("");
+
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this,
-                 "Ocurrio un error y no se guardaron los datos");
+                    "Ocurrio un error y no se guardaron los datos");
         }
-        
+
     }//GEN-LAST:event_btagregartecladoMouseClicked
 
     private void btagregarpantallaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btagregarpantallaMouseClicked
         // TODO add your handling code here:
-                 String tactil, tipo;
-           double tiempo_ensamblaje;
-        try {     
+        String tactil, tipo;
+        double tiempo_ensamblaje;
+        try {
             tiempo_ensamblaje = Double.parseDouble(tensamblaje4.getText());
             tactil = ttactilp.getText();
             tipo = ttipop.getText();
-            
- 
+
             Pantalla r = new Pantalla(tactil, tipo, tiempo_ensamblaje);
-            
+
             partes.add(r);
-            
+
             JOptionPane.showMessageDialog(this,
-                 "Valores Ingresado Correctamente");
-            
-            
+                    "Valores Ingresado Correctamente");
+
+            tensamblaje4.setText("");
+            ttactilp.setText("");
+            ttipop.setText("");
+
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this,
-                 "Ocurrio un error y no se guardaron los datos");
+                    "Ocurrio un error y no se guardaron los datos");
         }
     }//GEN-LAST:event_btagregarpantallaMouseClicked
 
     private void btagregarprocesadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btagregarprocesadorMouseClicked
         // TODO add your handling code here:
-           int num_nucleo; 
-           String velocidad;
-           double tiempo_ensamblaje;
-           
-        try {     
+        int num_nucleo;
+        String velocidad;
+        double tiempo_ensamblaje;
+
+        try {
             tiempo_ensamblaje = Double.parseDouble(tensamblaje4.getText());
             num_nucleo = Integer.parseInt(tnumnucleop.getText());
             velocidad = tvelocidadp.getText();
-            
- 
+
             Procesador r = new Procesador(num_nucleo, velocidad, tiempo_ensamblaje);
-            
+
             partes.add(r);
-            
+
             JOptionPane.showMessageDialog(this,
-                 "Valores Ingresado Correctamente");
-            
-            
+                    "Valores Ingresado Correctamente");
+
+            tensamblaje4.setText("");
+            tnumnucleop.setText("");
+            tvelocidadp.setText("");
+
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this,
-                 "Ocurrio un error y no se guardaron los datos");
+                    "Ocurrio un error y no se guardaron los datos");
         }
     }//GEN-LAST:event_btagregarprocesadorMouseClicked
 
@@ -1695,7 +1707,7 @@ if (value instanceof Number) {
             }
         });
     }
-    
+
     ArrayList<Parte> partes = new ArrayList();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
